@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shaktigmclothing — Streetwear & Accessories</title>
+<meta name="description" content="shaktigmclothing — T-shirts, pants and accessories with a clean streetwear aesthetic.">
+<style>
+:root{--bg:#0a0a0a;--card:#121212;--text:#f5f5f5;--muted:#9b9b9b;--line:#242424;--accent:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+.logo{font-weight:900;letter-spacing:-1px;font-size:20px}
+.logo span{font-weight:400}
+.navlinks{display:flex;gap:28px;font-size:14px;color:#ccc}
+.navlinks a:hover{color:#fff}
+.cart{border:1px solid #444;border-radius:999px;padding:9px 14px;font-size:13px}
+.hero{min-height:72vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:radial-gradient(circle at 50% 25%,#252525 0,#0a0a0a 45%);border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(48px,9vw,108px);line-height:.9;letter-spacing:-6px;text-transform:lowercase}
+.hero p{max-width:550px;margin:25px auto;color:var(--muted);font-size:16px}
+.btn{display:inline-block;background:#fff;color:#000;padding:13px 22px;border-radius:4px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.7px}
+.btn:hover{opacity:.85}
+.section{max-width:1180px;margin:auto;padding:75px 22px}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px}
+.section h2{font-size:34px;letter-spacing:-1.5px}
+.section-head p{color:var(--muted);font-size:13px}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:65px}
+.cat{height:210px;border:1px solid var(--line);background:linear-gradient(145deg,#181818,#0e0e0e);display:flex;align-items:end;padding:22px;transition:.2s}
+.cat:hover{transform:translateY(-4px);border-color:#555}
+.cat h3{font-size:24px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product{background:var(--card);border:1px solid var(--line);overflow:hidden}
+.pic{aspect-ratio:1/1.1;background:linear-gradient(145deg,#202020,#0d0d0d);display:grid;place-items:center;color:#777;font-size:12px;text-transform:uppercase;letter-spacing:2px}
+.info{padding:15px}
+.info h3{font-size:15px;margin-bottom:5px}
+.price{font-weight:800}
+.muted{color:var(--muted);font-size:12px}
+.buy{display:block;text-align:center;margin-top:13px;border:1px solid #444;padding:9px;font-size:12px;font-weight:700}
+.buy:hover{background:#fff;color:#000}
+.banner{margin-top:65px;border:1px solid var(--line);padding:45px;text-align:center;background:#111}
+.banner h2{font-size:38px;letter-spacing:-2px;margin-bottom:10px}
+.banner p{color:var(--muted);margin-bottom:22px}
+footer{border-top:1px solid var(--line);padding:35px 22px;color:#777;text-align:center;font-size:12px}
+#toast{position:fixed;right:20px;bottom:20px;background:#fff;color:#000;padding:13px 17px;border-radius:5px;display:none;font-size:13px;font-weight:700;z-index:50}
+@media(max-width:800px){.navlinks{display:none}.categories{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.hero h1{letter-spacing:-3px}.banner{padding:30px 18px}}
+@media(max-width:430px){.products{grid-template-columns:1fr}.section h2{font-size:28px}}
+</style>
+</head>
+<body>
+<header>
+<nav class="nav">
+  <a class="logo" href="#">shaktigm<span>clothing</span></a>
+  <div class="navlinks">
+    <a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#about">About</a>
+  </div>
+  <a class="cart" href="#shop">Cart <span id="count">0</span></a>
+</nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="muted" style="letter-spacing:4px;text-transform:uppercase;margin-bottom:15px">Everyday streetwear</div>
+    <h1>wear your<br>energy.</h1>
+    <p>Clean fits. Relaxed silhouettes. Everyday accessories. Welcome to shaktigmclothing.</p>
+    <a class="btn" href="#shop">Shop collection</a>
+  </div>
+</section>
+
+<main class="section">
+<section id="categories">
+  <div class="section-head"><div><h2>Shop by category</h2><p>Find your next fit.</p></div></div>
+  <div class="categories">
+    <a class="cat" href="#shop"><h3>T-Shirts →</h3></a>
+    <a class="cat" href="#shop"><h3>Pants →</h3></a>
+    <a class="cat" href="#shop"><h3>Accessories →</h3></a>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="section-head"><div><h2>Featured drops</h2><p>Replace these demo products with your real inventory.</p></div></div>
+  <div class="products">
+    <article class="product"><div class="pic">Product photo</div><div class="info"><h3>Oversized Essential Tee</h3><div class="price">₹399</div><div class="muted">Black · Unisex</div><a class="buy" href="#" onclick="add('Oversized Essential Tee');return false">Add to cart</a></div></article>
+    <article class="product"><div class="pic">Product photo</div><div class="info"><h3>Relaxed Baggy Pants</h3><div class="price">₹699</div><div class="muted">Grey · Loose fit</div><a class="buy" href="#" onclick="add('Relaxed Baggy Pants');return false">Add to cart</a></div></article>
+    <article class="product"><div class="pic">Product photo</div><div class="info"><h3>Minimal Street Tee</h3><div class="price">₹449</div><div class="muted">White · Oversized</div><a class="buy" href="#" onclick="add('Minimal Street Tee');return false">Add to cart</a></div></article>
+    <article class="product"><div class="pic">Product photo</div><div class="info"><h3>Everyday Cap</h3><div class="price">₹249</div><div class="muted">Black · Adjustable</div><a class="buy" href="#" onclick="add('Everyday Cap');return false">Add to cart</a></div></article>
+  </div>
+</section>
+
+<section id="about" class="banner">
+  <h2>Simple. Bold. Yours.</h2>
+  <p>shaktigmclothing is built around affordable pieces that are easy to style every day.</p>
+  <a class="btn" href="https://wa.me/?text=Hi%20shaktigmclothing%2C%20I%20want%20to%20order." target="_blank">Order on WhatsApp</a>
+</section>
+</main>
+
+<footer>© 2026 shaktigmclothing · T-shirts · Pants · Accessories</footer>
+<div id="toast"></div>
+<script>
+let cart=0;
+function add(name){
+ cart++;
+ document.getElementById('count').textContent=cart;
+ const t=document.getElementById('toast');
+ t.textContent=name+' added to cart';
+ t.style.display='block';
+ setTimeout(()=>t.style.display='none',1800);
+}
+</script>
+</body>
+</html>
